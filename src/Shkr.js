@@ -13,6 +13,7 @@ import { buildOptionsList } from "./buildOptionsList";
 function Shkr({
   items,
   email,
+  reportFunction,
   reportIcon,
   dismissIcon,
   containerStyle,
@@ -25,6 +26,7 @@ function Shkr({
     email,
     reportIcon,
     dismissIcon,
+    reportFunction,
   );
 
   useEffect(() => {
@@ -61,7 +63,13 @@ function Shkr({
 }
 
 Shkr.propTypes = {
-  listOfItems: PropTypes.array,
+  items: PropTypes.array,
+  email: PropTypes.string,
+  reportFunction: PropTypes.func,
+  reportIcon: PropTypes.element,
+  dismissIcon: PropTypes.element,
+  containerStyle: PropTypes.object,
+  listItemStyle: PropTypes.object,
 };
 
 export default Shkr;

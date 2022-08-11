@@ -4,11 +4,22 @@ import Icon from "react-native-vector-icons/AntDesign";
 
 import getDeviceInfo from "./getDeviceInfo";
 
-export const buildOptionsList = (items, setVisible, email, reportIcon, dismissIcon) => {
+export const buildOptionsList = (
+  items,
+  setVisible,
+  email,
+  reportIcon,
+  dismissIcon,
+  reportFunction,
+) => {
   const handleReport = () => {
     const info = getDeviceInfo();
+
     if (email === undefined) {
-      alert("You didn't provide an email address as prop")
+      if (reportFunction === undefined) {
+        console.log(info);
+      }
+      reportFunction?.(info);
     } else {
       Linking.openURL(`mailto:${email}?subject=Report Issue&body=${info}`);
     }
