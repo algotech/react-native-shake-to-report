@@ -7,10 +7,11 @@ import getDeviceInfo from "./getDeviceInfo";
 export const buildOptionsList = (items, setVisible, email, reportIcon, dismissIcon) => {
   const handleReport = () => {
     const info = getDeviceInfo();
+
     if (email === undefined) {
       alert("You didn't provide an email address as prop")
     } else {
-      Linking.openURL(`mailto:${email}?subject=Report Issue&body=${info}`);
+      Linking.openURL(`mailto:${email}?subject=Report Issue&body=${JSON.stringify(info)}`);
     }
   };
 

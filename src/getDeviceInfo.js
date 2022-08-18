@@ -13,7 +13,7 @@ const getDeviceInfo = () => {
   device.isTablet = DeviceInfo.isTablet();
   device.appName = DeviceInfo.getApplicationName();
 
-  return JSON.stringify(device);
+  return device;
 }
 
 export default getDeviceInfo;
