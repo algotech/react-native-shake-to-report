@@ -8,23 +8,23 @@ import {
   View,
 } from "react-native";
 import { shkrStyles } from "./styles";
-import { buildList } from "./buildList";
+import { buildOptionsList } from "./buildOptionsList";
 
 function Shkr({
-  listOfItems,
-  mailToReceiveInfo,
-  specialIconForReport,
-  specialIconForDismiss,
-  customContainerStyle,
-  customListItemStyle,
+  items,
+  email,
+  reportIcon,
+  dismissIcon,
+  containerStyle,
+  listItemStyle,
 }) {
   const [visible, setVisible] = useState(false);
-  const options = buildList(
-    listOfItems,
+  const options = buildOptionsList(
+    items,
     setVisible,
-    mailToReceiveInfo,
-    specialIconForReport,
-    specialIconForDismiss,
+    email,
+    reportIcon,
+    dismissIcon,
   );
 
   useEffect(() => {
@@ -40,13 +40,13 @@ function Shkr({
   return (
     <>
       {!visible &&
-        <View style={[shkrStyles.container, customContainerStyle]}>
+        <View style={[shkrStyles.container, containerStyle]}>
           <ScrollView>
-            {options.map((item, index) => {
+            {options.map((item) => {
               return (
                 <TouchableOpacity
                   onPress={item.action}
-                  style={[shkrStyles.tile, customListItemStyle]}
+                  style={[shkrStyles.tile, listItemStyle]}
                 >
                   {item.icon}
                   <Text style={shkrStyles.title}>{item.title}</Text>

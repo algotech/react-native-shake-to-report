@@ -1,19 +1,19 @@
 import React from "react";
-import DeviceInfo from 'react-native-device-info';
+import DeviceInfo from "react-native-device-info";
 
-function GetDeviceInfo(props) {
-  let deviceJSON = {}
-  deviceJSON.uniqueId = DeviceInfo.getUniqueId();
-  deviceJSON.deviceId = DeviceInfo.getDeviceId();
-  deviceJSON.deviceType = DeviceInfo.getDeviceType();
-  deviceJSON.model = DeviceInfo.getModel();
-  deviceJSON.brand = DeviceInfo.getBrand();
-  deviceJSON.systemName = DeviceInfo.getSystemName();
-  deviceJSON.systemVersion = DeviceInfo.getSystemVersion();
-  deviceJSON.isTablet = DeviceInfo.isTablet();
-  deviceJSON.appName = DeviceInfo.getApplicationName();
+const getDeviceInfo = () => {
+  const device = {};
+  device.uniqueId = DeviceInfo.getUniqueId();
+  device.deviceId = DeviceInfo.getDeviceId();
+  device.deviceType = DeviceInfo.getDeviceType();
+  device.model = DeviceInfo.getModel();
+  device.brand = DeviceInfo.getBrand();
+  device.systemName = DeviceInfo.getSystemName();
+  device.systemVersion = DeviceInfo.getSystemVersion();
+  device.isTablet = DeviceInfo.isTablet();
+  device.appName = DeviceInfo.getApplicationName();
 
-  return JSON.stringify(deviceJSON);
+  return device;
 }
 
-export default GetDeviceInfo;
+export default getDeviceInfo;
