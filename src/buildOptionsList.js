@@ -10,18 +10,19 @@ export const buildOptionsList = (
   email,
   reportIcon,
   dismissIcon,
-  reportFunction,
+  reportIssue,
 ) => {
   const handleReport = () => {
     const info = getDeviceInfo();
 
     if (email === undefined) {
-      if (reportFunction === undefined) {
+      if (reportIssue === undefined) {
         console.log(info);
       }
-      reportFunction?.(info);
+      reportIssue?.(info);
     } else {
       Linking.openURL(`mailto:${email}?subject=Report Issue&body=${JSON.stringify(info)}`);
+      reportIssue?.(info);
     }
   };
 
