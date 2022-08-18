@@ -15,14 +15,12 @@ export const buildOptionsList = (
   const handleReport = () => {
     const info = getDeviceInfo();
 
-    if (email === undefined) {
-      if (reportIssue === undefined) {
-        console.log(info);
-      }
+    if (reportIssue !== undefined) {
       reportIssue?.(info);
-    } else {
+    } else if (email !== undefined) {
       Linking.openURL(`mailto:${email}?subject=Report Issue&body=${JSON.stringify(info)}`);
-      reportIssue?.(info);
+    } else {
+      console.log(info);
     }
   };
 
