@@ -13,7 +13,7 @@ import { buildOptionsList } from "./buildOptionsList";
 function Shkr({
   items,
   email,
-  reportFunction,
+  reportIssue,
   reportIcon,
   dismissIcon,
   containerStyle,
@@ -26,7 +26,7 @@ function Shkr({
     email,
     reportIcon,
     dismissIcon,
-    reportFunction,
+    reportIssue,
   );
 
   useEffect(() => {
