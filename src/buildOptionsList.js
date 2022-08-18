@@ -21,7 +21,7 @@ export const buildOptionsList = (
       }
       reportFunction?.(info);
     } else {
-      Linking.openURL(`mailto:${email}?subject=Report Issue&body=${info}`);
+      Linking.openURL(`mailto:${email}?subject=Report Issue&body=${JSON.stringify(info)}`);
     }
   };
 
