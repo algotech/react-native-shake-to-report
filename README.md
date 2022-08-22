@@ -1,12 +1,9 @@
 # `react-native-shake-to-report`
 
-<img src="src/assets/screenshot.png" width="852" />
+By adding this library to your app, the user will have the ability to shake
+the phone and be prompted with a menu of options.
 
-Using this library, you can add to your app the shake event listener,
-which will trigger a custom list of options, each one with it's own logic.
-When the 'Report a problem' option is selected an email with the device's
-information will be sent or a callback function will pe triggered, depending
-on the method provided.
+<img src="src/assets/screenshot.png" width="220" />
 
 ## Installation
 
@@ -35,7 +32,7 @@ import Shkr from 'react-native-shake-to-report';
 ```
 
 ```javascript
-const extraItems = [{
+const extraMenuOptions = [{
   icon: extraItemIcon,
   title: "Extra Item Title",
   action: handleExtraItem,
@@ -46,7 +43,7 @@ const reportIssue = (deviceInfo) => {
 }
 
   <Shkr
-    items={extraItems}
+    items={extraMenuOptions}
     email='example@example.com'
     reportIssue={(deviceInfo) => reportIssue(deviceInfo)}
   />
@@ -54,13 +51,13 @@ const reportIssue = (deviceInfo) => {
 
 ### Props
 
-| Prop name      | Type     | Description                                                                                                                       |
-|----------------|----------|-----------------------------------------------------------------------------------------------------------------------------------|
-| items          | array    | An array of objects, each one having the 'icon', 'title' and 'action' keys. Their values will be added to the list of options.    |
-| reportIssue    | function | A callback function with custom logic invoked when the 'Report a problem' option was selected.                                    |
-| email          | string   | Used to receive the device information after the 'Report a problem' option was selected, if a callback function was not provided. |
-| reportIcon     | element  | Used to replace the default report icon.                                                                                          |
-| dismissIcon    | element  | Used to replace the default dismiss icon.                                                                                         |
-| containerStyle | object   | Used to replace the default container styles.                                                                                     |
-| listItemStyle  | object   | Used to replace the default style of each item in the list.                                                                       |
+| Prop name      | Type     | Description                                                                                                       |
+|----------------|----------|-------------------------------------------------------------------------------------------------------------------|
+| items          | array    | An array of objects, each one having the 'icon', 'title' and 'action' keys. Each object represents a menu option. |
+| reportIssue    | function | A callback function invoked when the 'Report a problem' option was selected.                                      |
+| email          | string   | Used to receive the device information after the 'Report a problem' option was selected.                          |
+| reportIcon     | element  | Replaces the default report icon.                                                                                 |
+| dismissIcon    | element  | Replaces the default dismiss icon.                                                                                |
+| containerStyle | object   | Replaces the default container styles.                                                                            |
+| listItemStyle  | object   | Replaces the default style of each item in the list.                                                              |
 
