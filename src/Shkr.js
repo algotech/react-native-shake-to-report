@@ -41,7 +41,7 @@ function Shkr({
 
   return (
     <>
-      {!visible &&
+      {visible &&
         <View style={[shkrStyles.container, containerStyle]}>
           <ScrollView>
             {options.map((item) => {
@@ -67,8 +67,8 @@ Shkr.propTypes = {
   email: PropTypes.string,
   reportFunction: PropTypes.func,
   reportIcon: PropTypes.element,
-  dismissIcon: PropTypes.element,
   containerStyle: PropTypes.object,
+  dismissIcon: PropTypes.element,
   listItemStyle: PropTypes.object,
 };
 
