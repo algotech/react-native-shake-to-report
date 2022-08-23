@@ -13,6 +13,7 @@ import { buildOptionsList } from "./buildOptionsList";
 function Shkr({
   items,
   email,
+  reportIssue,
   reportIcon,
   dismissIcon,
   containerStyle,
@@ -25,6 +26,7 @@ function Shkr({
     email,
     reportIcon,
     dismissIcon,
+    reportIssue,
   );
 
   useEffect(() => {
@@ -39,7 +41,7 @@ function Shkr({
 
   return (
     <>
-      {!visible &&
+      {visible &&
         <View style={[shkrStyles.container, containerStyle]}>
           <ScrollView>
             {options.map((item) => {
@@ -61,7 +63,13 @@ function Shkr({
 }
 
 Shkr.propTypes = {
-  listOfItems: PropTypes.array,
+  items: PropTypes.array,
+  email: PropTypes.string,
+  reportFunction: PropTypes.func,
+  reportIcon: PropTypes.element,
+  containerStyle: PropTypes.object,
+  dismissIcon: PropTypes.element,
+  listItemStyle: PropTypes.object,
 };
 
 export default Shkr;
