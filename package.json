@@ -1,13 +1,13 @@
 {
   "name": "react-native-shake-to-report",
   "version": "1.0.0",
-  "homepage": "https://github.com/algotech/react-native-shake-to-report",
   "description": "Shake to report an issue component",
   "main": "index.js",
   "keywords": [
     "Shake",
     "Report"
   ],
+  "homepage": "https://github.com/algotech/react-native-shake-to-report",
   "author": "Algotech",
   "license": "ISC",
   "scripts": {
