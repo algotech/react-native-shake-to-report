@@ -5,6 +5,14 @@ the phone and be prompted with a menu of options.
 
 <img src="src/assets/screenshot.png" width="220" />
 
+## Table of contents
+
+- [Installation](#installation)
+- [API](#api)
+- [Examples](#examples)
+    - [Example App](#example-app)
+- [Usage](#usage)
+
 ## Installation
 
 ```sh
@@ -21,6 +29,33 @@ On iOS, install cocoapods:
 ```bash
 cd ios
 pod install
+```
+
+## API
+
+| Prop name      | Type     | Description                                                                                                       |
+|----------------|----------|-------------------------------------------------------------------------------------------------------------------|
+| items          | array    | An array of objects, each one having the 'icon', 'title' and 'action' keys. Each object represents a menu option. |
+| reportIssue    | function | A callback function invoked when the 'Report a problem' option was selected.                                      |
+| email          | string   | Used to receive the device information after the 'Report a problem' option was selected.                          |
+| reportIcon     | element  | Replaces the default report icon.                                                                                 |
+| dismissIcon    | element  | Replaces the default dismiss icon.                                                                                |
+| containerStyle | object   | Replaces the default container styles.                                                                            |
+| listItemStyle  | object   | Replaces the default style of each item in the list.                                                              |
+
+## Examples
+
+### Example App
+
+Our example app includes all the basic use cases of our component.
+You can run the example app by cloning our repo and following these steps:
+
+```shell
+cd example
+npm install
+cd ios && pod install
+cd ..
+npx react-native run-ios or npx react-native run-android
 ```
 
 ## Usage
@@ -48,16 +83,4 @@ const reportIssue = (deviceInfo) => {
     reportIssue={(deviceInfo) => reportIssue(deviceInfo)}
   />
 ```
-
-### Props
-
-| Prop name      | Type     | Description                                                                                                       |
-|----------------|----------|-------------------------------------------------------------------------------------------------------------------|
-| items          | array    | An array of objects, each one having the 'icon', 'title' and 'action' keys. Each object represents a menu option. |
-| reportIssue    | function | A callback function invoked when the 'Report a problem' option was selected.                                      |
-| email          | string   | Used to receive the device information after the 'Report a problem' option was selected.                          |
-| reportIcon     | element  | Replaces the default report icon.                                                                                 |
-| dismissIcon    | element  | Replaces the default dismiss icon.                                                                                |
-| containerStyle | object   | Replaces the default container styles.                                                                            |
-| listItemStyle  | object   | Replaces the default style of each item in the list.                                                              |
 
