@@ -25,8 +25,13 @@ yarn add react-native-shake-to-report
 On iOS, install cocoapods:
 
 ```bash
-cd ios
-pod install
+npx pod-install
+```
+
+Dependencies you will need to install:
+
+```sh
+npm install react-native-device-info react-native-shake react-native-vector-icons
 ```
 
 ## API
@@ -58,12 +63,14 @@ const extraMenuOptions = [{
 
 const reportIssue = (deviceInfo) => {
   // your code here
-}
+};
 
+return(
   <Shkr
     items={extraMenuOptions}
     email="example@example.com"
     reportIssue={(deviceInfo) => reportIssue(deviceInfo)}
   />
+);
 ```
 
