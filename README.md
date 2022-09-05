@@ -40,13 +40,15 @@ const extraMenuOptions = [{
 
 const reportIssue = (deviceInfo) => {
   // your code here
-}
+};
 
+return (
   <Shkr
     items={extraMenuOptions}
     email='example@example.com'
     reportIssue={(deviceInfo) => reportIssue(deviceInfo)}
   />
+);
 ```
 
 ### Props
